@@ -6,20 +6,17 @@ import (
 )
 
 func main() {
-	sum := 20.0
-	Nickels, Dimes, Quarters := 0, 0, 0
-	for sum > 0.0 {
-		curr := rand.Intn(3)
-		if curr == 0 {
-			sum -= 0.05
-			Nickels += 1
-		} else if curr == 1 {
-			sum -= 0.10
-			Dimes += 1
-		} else {
-			sum -= 0.25
-			Quarters += 1
+	piggyBank := 0.0
+
+	for piggyBank < 20.00 {
+		switch rand.Intn(3) {
+		case 0:
+			piggyBank += 0.05
+		case 1:
+			piggyBank += 0.10
+		case 2:
+			piggyBank += 0.25
 		}
+	fmt.Printf("$%5.2f\n", piggyBank)
 	}
-	fmt.Printf("\nNickels: %v\nDimes: %v\nQuarters: %v\n", Nickels, Dimes, Quarters)
 }
