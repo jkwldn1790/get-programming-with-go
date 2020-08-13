@@ -5,32 +5,21 @@ import (
 	"math/rand"
 )
 
-// func chg() {
-// 	curr := rand.Intn(3)
-// 	coin := 0.0
-// 	switch curr {
-// 	case 0:
-// 		coin := 0.05
-// 	case 1:
-// 		coin := 0.10
-// 	case 2:
-// 		coin := 0.25
-// 	}
-// 	return coin
-// }
-
 func main() {
-	curr := rand.Intn(3)
-	coin := 0.0
-	sum := 0
-	for i := 0; sum < 20.0; i += sum {
+	sum := 20.0
+	Nickels, Dimes, Quarters := 0, 0, 0
+	for sum > 0.0 {
+		curr := rand.Intn(3)
 		if curr == 0 {
-			coin = 0.05
+			sum -= 0.05
+			Nickels += 1
 		} else if curr == 1 {
-			coin = 0.10
+			sum -= 0.10
+			Dimes += 1
 		} else {
-			coin = 0.25
+			sum -= 0.25
+			Quarters += 1
 		}
 	}
-	fmt.Printf("%v test", coin)
+	fmt.Printf("\nNickels: %v\nDimes: %v\nQuarters: %v\n", Nickels, Dimes, Quarters)
 }
