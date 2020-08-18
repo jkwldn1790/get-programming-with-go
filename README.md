@@ -31,3 +31,4 @@ year := 2020
 fmt.Printf("Type %T for %[1]v\n", year)
 ```
 * You can use `fmt.Printf` with `%x` to print hexidecimal numbers.
+* `%b` will show you the bits for an integer
