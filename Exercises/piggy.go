@@ -17,6 +17,6 @@ func main() {
 		case 2:
 			piggyBank += 0.25
 		}
-	fmt.Printf("$%5.2f\n", piggyBank)
+	fmt.Printf("$ %5.2f\n", piggyBank)
 	}
 }
