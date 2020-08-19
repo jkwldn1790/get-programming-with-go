@@ -32,3 +32,5 @@ fmt.Printf("Type %T for %[1]v\n", year)
 ```
 * You can use `fmt.Printf` with `%x` to print hexidecimal numbers.
 * `%b` will show you the bits for an integer
+* Calculations on constants and literals are done during compilation rather than while the program is running. This allows you to define numbers that are larger than 64-bit in a constant or literal.
+* Untyped constants must be converted to typed variables when passed to functions
