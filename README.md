@@ -51,3 +51,22 @@ age := 41
 marsAge := float64(age)
 ```
 * You can also convert a floating point to an integer `fmt.Println(int(earthDays))
+* You can convert a rune or a byte to a string as well using like so ... 
+```
+var pi rune = 960
+var alpha rune = 940
+var omega rune = 969
+var bang byte = 33
+
+fmt.Println(string(pi), string(alpha), string(omega), string(bang))
+```
+*Convert Integers to Strings*
+* You can convert integers to strings using `strconv.Itoa(10)`
+* You can also use the `Sprintf` package that returns a string instead of displaying it.
+* You should also probably use the `Sprintf` package for converting booleans to strings as well.
+> You can use a string to evaluate a boolean like...
+```
+yesNo := "yes"
+
+launch := (yesNo == "yes") // evaluates to true
+```
