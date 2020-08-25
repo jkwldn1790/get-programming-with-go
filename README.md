@@ -44,6 +44,9 @@ fmt.Printf("Type %T for %[1]v\n", year)
 
 > Signed vs. Unsigned integers ... unsigned integers cannot be negative and have a higher positive range. While signed integers can be negative and have a lower positive range as result.
 
+* `Byte` is an alias for `uint8` and `rune` is an alias for `int32`.
+* You use the `%c` format verb to show the string equivalent to a byte or rune.
+
 ## Notes: Lesson 10
 * You can convert types using similar sytax to the following ...
 ```
