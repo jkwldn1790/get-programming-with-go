@@ -6,14 +6,14 @@ import (
 )
 
 var (
-	departDate = "October 13, 2020"
+	departDate  = "October 13, 2020"
 	destination = "Mars"
-	distance = 62100000
-	tickets = 10
+	distance    = 62100000
+	tickets     = 10
 )
 
 const (
-	secDay = 86400
+	secDay   = 86400
 	priceExp = 2
 )
 
@@ -21,7 +21,7 @@ func main() {
 	fmt.Printf("\nDeparting on: %v\n\nDestination: %v\nDistance: %v km\n\n", departDate, destination, distance)
 	fmt.Println("Spaceline         Speed  Days  TripType      Price")
 	fmt.Println("==================================================")
-	for tickets > 0 {		
+	for tickets > 0 {
 		tripType := "One-way"
 		spaceLineSelect := "SpaceX"
 		spaceLine := rand.Intn(3)
