@@ -3,44 +3,39 @@ package main
 import (
 	"fmt"
 	"math/rand"
-)
-
-var (
-	departDate  = "October 13, 2020"
-	destination = "Mars"
-	distance    = 62100000
-	tickets     = 10
+	"strings"
 )
 
 const (
-	secDay   = 86400
-	priceExp = 2
+	distanceToMars = 62100000
+	secondsPerDay = 86400
 )
 
 func main() {
-	fmt.Printf("\nDeparting on: %v\n\nDestination: %v\nDistance: %v km\n\n", departDate, destination, distance)
-	fmt.Println("Spaceline         Speed  Days  TripType      Price")
-	fmt.Println("==================================================")
-	for tickets > 0 {
-		tripType := "One-way"
-		spaceLineSelect := "SpaceX"
-		spaceLine := rand.Intn(3)
-		speed := rand.Intn(14) + 16
-		days := (distance / speed) / secDay
-		price := speed * priceExp
-		switch spaceLine {
+	fmt.Printf("%-20v %-10v %-20v %s\n", "Spaceline", "Days", "Trip-Type", "Price")
+	header := []string{strings.Repeat("=", 58)}
+	fmt.Println(strings.Join(header, ""))
+	for count := 10; count > 0; count-- {
+
+		var spaceline string
+
+		speed := rand.Intn(15) + 16
+
+		days := distanceToMars / speed / secondsPerDay
+
+		ticketPrice := 20 + speed
+
+		switch rand.Intn(3) {
 		case 0:
-			spaceLineSelect = "Space Adventures"
+			spaceline = "SpaceX"
 		case 1:
-			spaceLineSelect = "SpaceX"
+			spaceline = "Virgin Galactic"
 		case 2:
-			spaceLineSelect = "Virgin Galactic"
+			spaceline = "Blue Origin"
 		}
-		if days > 30 {
-			tripType = "Round-trip"
-			price = price * 2
-		}
-		fmt.Printf("%-18v %3v %5v %-16v $%3v\n", spaceLineSelect, speed, days, tripType, price)
-		tickets--
+
+		fmt.Printf("%-20v %-10v %-20v $ %v\n", spaceline, days, "One-Way", ticketPrice)
+		fmt.Printf("%-20v %-10v %-20v $ %v\n", spaceline, (days * 2), "Round-Trip", (ticketPrice * 2))
+		
 	}
 }
